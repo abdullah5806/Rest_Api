@@ -1,0 +1,34 @@
+@PMS_HostAddress = http://localhost:5145
+
+### Read all products
+GET {{PMS_HostAddress}}/api/products
+Accept: application/json
+
+### Read one product
+GET {{PMS_HostAddress}}/api/products/1
+Accept: application/json
+
+### Create a product (returns 201 Created and a Location header)
+POST {{PMS_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Mouse",
+  "description": "A simple wireless mouse",
+  "price": 19.99,
+  "stockQuantity": 25
+}
+
+### Update a product (returns 204 No Content)
+PUT {{PMS_HostAddress}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Notebook",
+  "description": "A ruled paper notebook",
+  "price": 5.49,
+  "stockQuantity": 115
+}
+
+### Delete a product (returns 204 No Content)
+DELETE {{PMS_HostAddress}}/api/products/1
